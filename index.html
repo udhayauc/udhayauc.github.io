@@ -1125,6 +1125,9 @@
                     <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-envelope"></i> Let's Connect
                     </a>
+                    <a href="#" class="btn btn-outline" id="downloadResume" onclick="downloadFile()">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
                     <a href="#projects" class="btn btn-outline">
                         <i class="fas fa-code"></i> View My Work
                     </a>
@@ -2063,6 +2066,22 @@
         window.addEventListener('afterprint', function() {
             document.body.classList.remove('printing');
         });
+
+        function downloadResume() {
+            const fileUrl = 'https://udhayauc.github.io/Udhaya_Chandran_Full_Stack_Developer.pdf'; // Replace with your file URL
+            const fileName = 'downloaded-file.pdf'; // Desired file name
+        
+            // Create an anchor element
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = fileName; // 'download' attribute prompts save dialog
+        
+            // Append link to body, click it, and remove it
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
 
         // Dark mode toggle (optional - you can enable this)
         /*
